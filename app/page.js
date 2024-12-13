@@ -1,101 +1,154 @@
-import Image from "next/image";
+"use client";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div>
+      <section className="relative bg-gray-900 text-white">
+        <div className="container mx-auto px-6 py-16 lg:flex lg:items-center lg:justify-between">
+          <div className="max-w-2xl">
+            <h1 className="text-4xl font-bold sm:text-5xl lg:text-6xl">
+              Build & Manage Content <br />
+              <span className="text-indigo-500">With Ease</span>
+            </h1>
+            <p className="mt-6 text-lg text-gray-300">
+              Empower your team to create, edit, and publish content
+              effortlessly with our Custom CMS.
+            </p>
+            <div className="mt-8 flex gap-4">
+              <Link
+                href="/login"
+                className="px-6 py-3 bg-indigo-600 text-white rounded-lg shadow-lg hover:bg-indigo-700 transition"
+              >
+                Get Started
+              </Link>
+              <Link
+                href="#features"
+                className="px-6 py-3 bg-gray-800 border border-gray-600 rounded-lg hover:bg-gray-700 transition"
+              >
+                Learn More
+              </Link>
+            </div>
+          </div>
+          <div className="mt-10 lg:mt-0">
+            {/* <img
+              src="/hero-image.svg" 
+              alt="CMS Illustration"
+              className="w-full max-w-md mx-auto lg:max-w-lg"
+            /> */}
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      <section id="features" className="bg-white py-16">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-800">
+              Features That Make Us Stand Out
+            </h2>
+            <p className="mt-4 text-gray-600">
+              Discover why our CMS is the perfect solution for your content
+              management needs.
+            </p>
+          </div>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+              <div className="text-indigo-500 mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="w-12 h-12"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 3.75L21.75 9.75v10.5A2.25 2.25 0 0119.5 22.5h-15a2.25 2.25 0 01-2.25-2.25V9.75L12 3.75z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800">
+                SEO Optimized
+              </h3>
+              <p className="mt-2 text-gray-600">
+                Boost your website's ranking with built-in SEO-friendly
+                features.
+              </p>
+            </div>
+
+            <div className="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+              <div className="text-indigo-500 mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="w-12 h-12"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M10.5 6.75v-2.5a.75.75 0 011.5 0v2.5a2.25 2.25 0 002.25 2.25h2.5a.75.75 0 010 1.5h-2.5a2.25 2.25 0 00-2.25 2.25v2.5a.75.75 0 01-1.5 0v-2.5A2.25 2.25 0 008.25 10.5h-2.5a.75.75 0 010-1.5h2.5A2.25 2.25 0 0010.5 6.75z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800">
+                Role-Based Access
+              </h3>
+              <p className="mt-2 text-gray-600">
+                Control who sees and edits your content with advanced
+                permissions.
+              </p>
+            </div>
+
+            <div className="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+              <div className="text-indigo-500 mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="w-12 h-12"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4.5 15.75h15m-15 0l4.5-9.75M4.5 15.75L9 6m6 9.75h4.5m-4.5 0L12 6"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800">
+                Effortless Publishing
+              </h3>
+              <p className="mt-2 text-gray-600">
+                Publish your content in just a few clicks with our streamlined
+                workflow.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-indigo-600 text-white py-12">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold">Ready to Get Started?</h2>
+          <p className="mt-4 text-lg">
+            Sign up today and experience the power of our Custom CMS.
+          </p>
+          <div className="mt-6">
+            <Link
+              href="/login"
+              className="px-6 py-3 bg-white text-indigo-600 font-bold rounded-lg hover:bg-gray-200 transition"
+            >
+              Get Started Now
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
