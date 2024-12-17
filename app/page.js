@@ -1,4 +1,6 @@
 "use client";
+import { Hero } from "@/public/images";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -31,11 +33,11 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-10 lg:mt-0">
-            {/* <img
-              src="/hero-image.svg"
+            <Image
+              src={Hero}
               alt="CMS Illustration"
               className="w-full max-w-md mx-auto lg:max-w-lg"
-            /> */}
+            />
           </div>
         </div>
       </section>
