@@ -1,3 +1,3 @@
-import Hero from "./cms (6).png";
+import Hero from "./cms.PNG";
 
 export { Hero };

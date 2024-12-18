@@ -2,6 +2,7 @@
 import { Hero } from "@/public/images";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -32,13 +33,29 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="mt-10 lg:mt-0">
+
+          <motion.div
+            className="mt-10 lg:mt-0"
+            initial={{ opacity: 0, scale: 0.9, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              ease: "easeOut",
+              type: "spring",
+              stiffness: 80,
+            }}
+            whileHover={{
+              scale: 1.05,
+              rotate: 1,
+              transition: { duration: 0.3 },
+            }}
+          >
             <Image
               src={Hero}
               alt="CMS Illustration"
               className="w-full max-w-md mx-auto lg:max-w-lg"
             />
-          </div>
+          </motion.div>
         </div>
       </section>
 
