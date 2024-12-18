@@ -1,13 +1,21 @@
+import { useRouter } from "next/router";
+import { useState } from "react";
+
 export default function Pricing() {
+  const router = useRouter();
+  const [selectedPlan, setSelectedPlan] = useState(null);
+
   const plans = [
     {
+      id: "basic",
       name: "Basic",
-      price: "N15,000/month",
+      price: "₦15,000/month",
       features: ["Basic CMS features", "1 admin account", "Standard support"],
     },
     {
+      id: "pro",
       name: "Pro",
-      price: "N25,000/month",
+      price: "₦25,000/month",
       features: [
         "Advanced CMS features",
         "5 admin accounts",
@@ -15,11 +23,17 @@ export default function Pricing() {
       ],
     },
     {
+      id: "enterprise",
       name: "Enterprise",
       price: "Custom Pricing",
       features: ["Unlimited access", "Dedicated support", "Custom features"],
     },
   ];
+
+  const handlePlanSelect = (planId) => {
+    setSelectedPlan(planId);
+    router.push(`/checkout?plan=${planId}`);
+  };
 
   return (
     <div className="bg-gray-50">
@@ -29,11 +43,18 @@ export default function Pricing() {
           <p className="mt-4 text-gray-600">
             Flexible plans to suit your needs.
           </p>
-          <div className="grid gap-8 mt-12 lg:grid-cols-3">
-            {plans.map((plan, index) => (
+        </div>
+      </section>
+
+      <section className="py-12">
+        <div className="container mx-auto px-6">
+          <div className="grid gap-8 lg:grid-cols-3">
+            {plans.map((plan) => (
               <div
-                key={index}
-                className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition"
+                key={plan.id}
+                className={`p-6 rounded-lg shadow-lg hover:shadow-xl transition ${
+                  selectedPlan === plan.id ? "ring-2 ring-indigo-600" : ""
+                }`}
               >
                 <h3 className="text-xl font-bold text-gray-800">{plan.name}</h3>
                 <p className="text-2xl font-bold mt-4">{plan.price}</p>
@@ -44,7 +65,10 @@ export default function Pricing() {
                     </li>
                   ))}
                 </ul>
-                <button className="mt-6 px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">
+                <button
+                  onClick={() => handlePlanSelect(plan.id)}
+                  className="mt-6 px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
+                >
                   Select Plan
                 </button>
               </div>

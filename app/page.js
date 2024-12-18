@@ -143,7 +143,7 @@ export default function Home() {
           <p className="mt-4 text-lg">Real feedback from real users.</p>
           <div className="mt-8">
             <Link
-              href="/users"
+              href="/testimonials"
               className="px-6 py-3 bg-white text-indigo-600 rounded-lg hover:bg-gray-200 transition"
             >
               See Testimonials
