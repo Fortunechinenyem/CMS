@@ -29,14 +29,14 @@ export default function Sidebar() {
           {isOpen && <span>Dashboard</span>}
         </Link>
         <Link
-          href="/dashboard/create"
+          href="/content/create"
           className="flex items-center gap-4 p-2 hover:bg-gray-700 rounded-md transition"
         >
           <FiEdit size={20} />
           {isOpen && <span>Create Content</span>}
         </Link>
         <Link
-          href="/dashboard/manage"
+          href="/content"
           className="flex items-center gap-4 p-2 hover:bg-gray-700 rounded-md transition"
         >
           <FiGrid size={20} />

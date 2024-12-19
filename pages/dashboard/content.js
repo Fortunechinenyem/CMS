@@ -11,17 +11,35 @@ export default function ContentManagement() {
   }, []);
 
   const fetchContent = async () => {
-    const { data } = await axios.get("/api/content");
-    setContentList(data.content);
+    try {
+      const { data } = await axios.get("/api/content");
+      setContentList(data.content);
+    } catch (error) {
+      console.error(
+        "Failed to fetch content:",
+        error.response?.data || error.message
+      );
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (editingId) {
-      await axios.patch("/api/content", { id: editingId, ...formData });
-    } else {
-      await axios.post("/api/content", formData);
+      try {
+        await axios.patch("/api/content", {
+          id: editingId,
+          title: formData.title,
+          body: formData.body,
+        });
+        fetchContent();
+      } catch (error) {
+        console.error(
+          "Error updating content:",
+          error.response ? error.response.data : error.message
+        );
+        alert("An error occurred while updating the content.");
+      }
     }
 
     setFormData({ title: "", body: "" });
@@ -35,7 +53,7 @@ export default function ContentManagement() {
   };
 
   const handleDelete = async (id) => {
-    await axios.delete("/api/content", { data: { id } });
+    await axios.delete("/api/content", { data: { id: "contentId" } });
     fetchContent();
   };
 
