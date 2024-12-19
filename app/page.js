@@ -72,21 +72,27 @@ export default function Home() {
             </p>
           </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <FeatureCard
-              title="SEO Optimized"
-              description="Boost your website's ranking with built-in SEO-friendly features that make your content discoverable."
-              icon={<SEOIcon />}
-            />
-            <FeatureCard
-              title="Role-Based Access"
-              description="Control who sees and edits your content with advanced permissions, ensuring your workflow remains organized."
-              icon={<LockIcon />}
-            />
-            <FeatureCard
-              title="Effortless Publishing"
-              description="Publish your content in just a few clicks with our intuitive and streamlined workflow."
-              icon={<PublishIcon />}
-            />
+            <Link href="/features">
+              <FeatureCard
+                title="SEO Optimized"
+                description="Boost your website's ranking with built-in SEO-friendly features that make your content discoverable."
+                icon={<SEOIcon />}
+              />
+            </Link>
+            <Link href="/features">
+              <FeatureCard
+                title="Role-Based Access"
+                description="Control who sees and edits your content with advanced permissions, ensuring your workflow remains organized."
+                icon={<LockIcon />}
+              />
+            </Link>
+            <Link href="/features">
+              <FeatureCard
+                title="Effortless Publishing"
+                description="Publish your content in just a few clicks with our intuitive and streamlined workflow."
+                icon={<PublishIcon />}
+              />
+            </Link>
           </div>
         </div>
       </section>
