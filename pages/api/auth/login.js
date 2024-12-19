@@ -27,7 +27,13 @@ export default async function handler(req, res) {
         { expiresIn: "7d" }
       );
 
-      res.status(200).json({ token, message: "Login successful!" });
+      res.status(200).json({
+        token: token,
+        user: {
+          role: user.role,
+        },
+        message: "Login successful!",
+      });
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: "Something went wrong!" });

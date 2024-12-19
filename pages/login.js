@@ -31,7 +31,12 @@ export default function Login() {
 
       localStorage.setItem("token", data.token);
       alert("Login successful!");
-      router.push("/");
+
+      if (data.user && data.user.role === "admin") {
+        router.push("/admin");
+      } else {
+        router.push("/dashboard");
+      }
     } catch (error) {
       setError(error.message);
     }
