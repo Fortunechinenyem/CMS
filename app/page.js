@@ -16,7 +16,8 @@ export default function Home() {
             </h1>
             <p className="mt-6 text-lg text-gray-300">
               Empower your team to create, edit, and publish content
-              effortlessly with our Custom CMS.
+              effortlessly with our world-class Custom CMS. Our platform
+              provides unparalleled flexibility and control.
             </p>
             <div className="mt-8 flex gap-4">
               <Link
@@ -73,63 +74,18 @@ export default function Home() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             <FeatureCard
               title="SEO Optimized"
-              description="Boost your website's ranking with built-in SEO-friendly features."
-              icon={
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="w-12 h-12"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 3.75L21.75 9.75v10.5A2.25 2.25 0 0119.5 22.5h-15a2.25 2.25 0 01-2.25-2.25V9.75L12 3.75z"
-                  />
-                </svg>
-              }
+              description="Boost your website's ranking with built-in SEO-friendly features that make your content discoverable."
+              icon={<SEOIcon />}
             />
             <FeatureCard
               title="Role-Based Access"
-              description="Control who sees and edits your content with advanced permissions."
-              icon={
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="w-12 h-12"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M10.5 6.75v-2.5a.75.75 0 011.5 0v2.5a2.25 2.25 0 002.25 2.25h2.5a.75.75 0 010 1.5h-2.5a2.25 2.25 0 00-2.25 2.25v2.5a.75.75 0 01-1.5 0v-2.5A2.25 2.25 0 008.25 10.5h-2.5a.75.75 0 010-1.5h2.5A2.25 2.25 0 0010.5 6.75z"
-                  />
-                </svg>
-              }
+              description="Control who sees and edits your content with advanced permissions, ensuring your workflow remains organized."
+              icon={<LockIcon />}
             />
             <FeatureCard
               title="Effortless Publishing"
-              description="Publish your content in just a few clicks with our streamlined workflow."
-              icon={
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="w-12 h-12"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4.5 15.75h15m-15 0l4.5-9.75M4.5 15.75L9 6m6 9.75h4.5m-4.5 0L12 6"
-                  />
-                </svg>
-              }
+              description="Publish your content in just a few clicks with our intuitive and streamlined workflow."
+              icon={<PublishIcon />}
             />
           </div>
         </div>
@@ -138,7 +94,46 @@ export default function Home() {
       <section className="bg-gray-100 py-16">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-gray-800">
-            Affordable Pricing
+            Perfect for Teams of All Sizes
+          </h2>
+          <p className="mt-4 text-gray-600">
+            Whether you're a small startup or an enterprise, our CMS adapts to
+            your team's needs.
+          </p>
+          <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+              <h3 className="text-xl font-semibold text-gray-800">Startups</h3>
+              <p className="mt-2 text-gray-600">
+                Get your content up and running fast with simple tools and
+                intuitive interfaces.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+              <h3 className="text-xl font-semibold text-gray-800">
+                Small Businesses
+              </h3>
+              <p className="mt-2 text-gray-600">
+                Collaborate with your team seamlessly and publish content
+                efficiently.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+              <h3 className="text-xl font-semibold text-gray-800">
+                Enterprises
+              </h3>
+              <p className="mt-2 text-gray-600">
+                Scale your content operations with advanced features like
+                role-based access and powerful analytics.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold text-gray-800">
+            Affordable Pricing for Every Need
           </h2>
           <p className="mt-4 text-gray-600">
             Choose the plan that fits your needs. No hidden fees.
@@ -173,7 +168,8 @@ export default function Home() {
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold">Ready to Get Started?</h2>
           <p className="mt-4 text-lg">
-            Sign up today and experience the power of our Custom CMS.
+            Sign up today and experience the power of our Custom CMS. It's time
+            to streamline your content creation.
           </p>
           <div className="mt-6">
             <Link
@@ -196,5 +192,62 @@ function FeatureCard({ title, description, icon }) {
       <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
       <p className="mt-2 text-gray-600">{description}</p>
     </div>
+  );
+}
+
+function SEOIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth="1.5"
+      stroke="currentColor"
+      className="w-12 h-12"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 3.75L21.75 9.75v10.5A2.25 2.25 0 0119.5 22.5h-15a2.25 2.25 0 01-2.25-2.25V9.75L12 3.75z"
+      />
+    </svg>
+  );
+}
+
+function LockIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth="1.5"
+      stroke="currentColor"
+      className="w-12 h-12"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M10.5 6.75v-2.5a.75.75 0 011.5 0v2.5a3 3 0 016 0v9a3 3 0 01-3 3H7.5a3 3 0 01-3-3v-9a3 3 0 016 0z"
+      />
+    </svg>
+  );
+}
+
+function PublishIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth="1.5"
+      stroke="currentColor"
+      className="w-12 h-12"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M9 5.25l3-3 3 3M9 19.5l3 3 3-3"
+      />
+    </svg>
   );
 }
