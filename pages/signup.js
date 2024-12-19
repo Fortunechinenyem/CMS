@@ -24,12 +24,6 @@ export default function Signup() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-      await db.collection("users").insertOne({
-        username,
-        email,
-        password: hashedPassword,
-        role: "user",
-      });
 
       const data = await res.json();
 
@@ -43,6 +37,7 @@ export default function Signup() {
       setError(error.message);
     }
   };
+
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center px-6">
       <div className="max-w-md w-full bg-white p-8 rounded-lg shadow-md">
@@ -54,10 +49,8 @@ export default function Signup() {
         </p>
         <form
           onSubmit={handleSubmit}
-          className="bg-white p-8 rounded shadow-md w-full max-w-md"
+          className="bg-white p-8 rounded shadow-md"
         >
-          <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
-
           {error && <p className="text-red-500 mb-4">{error}</p>}
 
           <div className="mb-4">
