@@ -1,8 +1,8 @@
-import dbConnect from "@/lib/db";
+import { connectToDatabase } from "@/lib/db";
 import Content from "@/models/Content";
 
 export async function getServerSideProps({ params }) {
-  await dbConnect();
+  await connectToDatabase();
   const content = await Content.findOne({ slug: params.slug }).lean();
   return { props: { content: JSON.parse(JSON.stringify(content)) } };
 }
